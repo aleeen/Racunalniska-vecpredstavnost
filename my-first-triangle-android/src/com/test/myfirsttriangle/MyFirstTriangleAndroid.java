@@ -16,6 +16,27 @@ public class MyFirstTriangleAndroid extends AndroidApplication {
                 Pesem();
                 z.Predvajaj();
         }
+    @Override
+	public void onResume() 
+    { 
+		super.onResume();
+		z.Predvajaj();
+	}
+    
+	@Override
+	public void onPause() 
+	{ 
+		super.onPause();
+		z.Pavza();
+	}
+	
+	@Override
+	public void onDestroy() 
+	{
+		super.onDestroy();
+		z.Stop();
+	}
+	
     public void Pesem()
     {
         z.IzbiraPesmi("data","nekaj.mp3");
@@ -43,24 +64,5 @@ public class MyFirstTriangleAndroid extends AndroidApplication {
         return super.onKeyDown(keyCode, event);
     }
     
-    @Override
-	public void onResume() 
-    { 
-		super.onResume();
-		z.Predvajaj();
-	}
-    
-	@Override
-	public void onPause() 
-	{ 
-		super.onPause();
-		z.Pavza();
-	}
-	
-	@Override
-	public void onDestroy() 
-	{
-		super.onDestroy();
-		z.Stop();
-	}
+   
 }

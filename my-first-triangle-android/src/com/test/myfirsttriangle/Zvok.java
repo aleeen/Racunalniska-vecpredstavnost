@@ -8,6 +8,21 @@ public class Zvok
 {
 	MediaPlayer mp = new MediaPlayer();
 	
+	public void Predvajaj()
+	{
+		mp.start();
+	}
+	
+	public void Pavza()
+	{
+		mp.pause();
+	}
+	
+	public void Stop()
+	{
+		mp.stop();
+	}
+	
 	public void IzbiraPesmi(String direktorij, String ime_datoteke)
 	{
         try 
@@ -29,7 +44,7 @@ public class Zvok
         
         try 
         {
-            mp.prepare(); //Pripravi za predvajanje
+            mp.prepare(); 
         } 
         catch (IllegalStateException e) 
         {
@@ -41,19 +56,6 @@ public class Zvok
         }
     }
 	
-	public void Predvajaj()
-	{
-		mp.start();
-	}
 	
-	public void Pavza()
-	{
-		mp.pause();
-	}
-	
-	public void Stop()
-	{
-		mp.stop();
-	}
 
 }

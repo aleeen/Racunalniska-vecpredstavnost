@@ -64,8 +64,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 
 public class MyFirstTriangle implements ApplicationListener {
-        //private Mesh mesh; //objekt ki ga bom oprikazali
-        private Mesh[] faces;
+       
+        private Mesh[] faces; //objekt ki ga bom oprikazali
         private OrthographicCamera camera;
         private float rotationSpeed;
 
@@ -73,18 +73,6 @@ public class MyFirstTriangle implements ApplicationListener {
         public void create() {
         	rotationSpeed = 0.5f;
 
-                /*if (mesh == null) {
-                	mesh = new Mesh(true, 3, 3, 
-                	        new VertexAttribute(Usage.Position, 3, "pozicija"),
-                	        new VertexAttribute(Usage.ColorPacked, 4, "barva"));         
-
-                        //polozaj tock trikotnika, barve v RGB, Alpha
-                	mesh.setVertices(new float[] { -0.5f, -0.5f, 0, Color.toFloatBits(255, 0, 0, 0),
-                            0.5f, -0.5f, 0, Color.toFloatBits(255, 0, 0, 0),
-                            0, 0.5f, 0, Color.toFloatBits(255, 0, 0, 0) });        
-                	
-                	mesh.setIndices(new short[] { 0, 1, 2 }); //povezava toèk                   
-                }*/
         	if (faces == null) {
         	      faces = new Mesh[6];
         	 
@@ -151,12 +139,8 @@ public class MyFirstTriangle implements ApplicationListener {
                 movementIncrement = -movementIncrement;
                 total = -200;
             }
-            //camera.rotate(movementIncrement * 20, 0, 1, 0);
-            //camera.translate(movementIncrement, 0, movementIncrement);
-
-
+          
                 Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-                //mesh.render(GL10.GL_TRIANGLES, 0, 3);
                 camera.update();
                 camera.apply(Gdx.gl10);
                 for (Mesh face : faces) {
